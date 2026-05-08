@@ -7,11 +7,25 @@ $tablet: 768px;
 $phone: 480px;
 
 @mixin responsive($property, $pcSize, $laptopSize, $tabletSize, $phoneSize) {
-  #{$property}: $pcSize;
-  @media (min-width: $laptop) and (max-width: $pc)     { #{$property}: $laptopSize; }
-  @media (min-width: $tablet) and (max-width: $laptop) { #{$property}: $tabletSize; }
-  @media (min-width: $phone)  and (max-width: $tablet) { #{$property}: $phoneSize; }
-  @media (max-width: $phone)                           { #{$property}: $phoneSize; }
+  & {
+    #{$property}: $pcSize;
+
+    @media (min-width: $laptop) and (max-width: $pc) {
+      #{$property}: $laptopSize;
+    }
+
+    @media (min-width: $tablet) and (max-width: $laptop) {
+      #{$property}: $tabletSize;
+    }
+
+    @media (min-width: $phone) and (max-width: $tablet) {
+      #{$property}: $phoneSize;
+    }
+
+    @media (max-width: $phone) {
+      #{$property}: $phoneSize;
+    }
+  }
 }
 
 .language-fl {

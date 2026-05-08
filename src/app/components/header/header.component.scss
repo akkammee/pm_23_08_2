@@ -4,22 +4,24 @@ $tablet: 768px;
 $phone: 480px;
 
 @mixin responsive($property, $pcSize, $laptopSize, $tabletSize, $phoneSize) {
-  #{$property}: $pcSize;
+  & {
+    #{$property}: $pcSize;
 
-  @media (min-width: $laptop) and (max-width: $pc) {
-    #{$property}: $laptopSize;
-  }
+    @media (min-width: $laptop) and (max-width: $pc) {
+      #{$property}: $laptopSize;
+    }
 
-  @media (min-width: $tablet) and (max-width: $laptop) {
-    #{$property}: $tabletSize;
-  }
+    @media (min-width: $tablet) and (max-width: $laptop) {
+      #{$property}: $tabletSize;
+    }
 
-  @media (min-width: $phone) and (max-width: $tablet) {
-    #{$property}: $phoneSize;
-  }
+    @media (min-width: $phone) and (max-width: $tablet) {
+      #{$property}: $phoneSize;
+    }
 
-  @media (max-width: $phone) {
-    #{$property}: $phoneSize;
+    @media (max-width: $phone) {
+      #{$property}: $phoneSize;
+    }
   }
 }
 
@@ -30,7 +32,7 @@ $phone: 480px;
 }
 
 .block-1 {
+  background-color: #333333;
   @include responsive(width, 80px, 70px, 60px, 45px);
   @include responsive(height, 280px, 260px, 240px, 200px);
-  background-color: #333333;
 }

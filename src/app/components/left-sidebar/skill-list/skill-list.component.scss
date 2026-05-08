@@ -8,23 +8,37 @@ $tablet: 768px;
 $phone: 480px;
 
 @mixin responsive($property, $pcSize, $laptopSize, $tabletSize, $phoneSize) {
-  #{$property}: $pcSize;
-  @media (min-width: $laptop) and (max-width: $pc)     { #{$property}: $laptopSize; }
-  @media (min-width: $tablet) and (max-width: $laptop) { #{$property}: $tabletSize; }
-  @media (min-width: $phone)  and (max-width: $tablet) { #{$property}: $phoneSize; }
-  @media (max-width: $phone)                           { #{$property}: $phoneSize; }
+  & {
+    #{$property}: $pcSize;
+
+    @media (min-width: $laptop) and (max-width: $pc) {
+      #{$property}: $laptopSize;
+    }
+
+    @media (min-width: $tablet) and (max-width: $laptop) {
+      #{$property}: $tabletSize;
+    }
+
+    @media (min-width: $phone) and (max-width: $tablet) {
+      #{$property}: $phoneSize;
+    }
+
+    @media (max-width: $phone) {
+      #{$property}: $phoneSize;
+    }
+  }
 }
 
 .skill {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @include responsive(width,     350px, 300px, 260px, 220px);
-  @include responsive(font-size, 16px,  15px,  14px,  13px);
-  @include responsive(margin,    14px 0, 12px 0, 10px 0, 8px 0);
   font-weight: 600;
   color: $black;
   cursor: default;
+  @include responsive(width,     350px, 300px, 260px, 220px);
+  @include responsive(font-size, 16px,  15px,  14px,  13px);
+  @include responsive(margin,    14px 0, 12px 0, 10px 0, 8px 0);
 }
 
 input[type='range'] {

@@ -7,29 +7,31 @@ $tablet: 768px;
 $phone: 480px;
 
 @mixin responsive($property, $pcSize, $laptopSize, $tabletSize, $phoneSize) {
-  #{$property}: $pcSize;
+  & {
+    #{$property}: $pcSize;
 
-  @media (min-width: $laptop) and (max-width: $pc) {
-    #{$property}: $laptopSize;
-  }
+    @media (min-width: $laptop) and (max-width: $pc) {
+      #{$property}: $laptopSize;
+    }
 
-  @media (min-width: $tablet) and (max-width: $laptop) {
-    #{$property}: $tabletSize;
-  }
+    @media (min-width: $tablet) and (max-width: $laptop) {
+      #{$property}: $tabletSize;
+    }
 
-  @media (min-width: $phone) and (max-width: $tablet) {
-    #{$property}: $phoneSize;
-  }
+    @media (min-width: $phone) and (max-width: $tablet) {
+      #{$property}: $phoneSize;
+    }
 
-  @media (max-width: $phone) {
-    #{$property}: $phoneSize;
+    @media (max-width: $phone) {
+      #{$property}: $phoneSize;
+    }
   }
 }
 
 .contact-box {
+  background: $black;
   @include responsive(width, 300px, 280px, 260px, 220px);
   @include responsive(height, 280px, 260px, 240px, 220px);
-  background: $black;
   padding: 20px;
   color: $white;
   margin-left: auto;
