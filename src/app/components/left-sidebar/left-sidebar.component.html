@@ -1,35 +1,10 @@
 <div class="pd-3">
-
-  <!-- ABOUT ME -->
-  <app-about-me
-    [paragraphs]="aboutText"
-    (sectionToggled)="onSectionToggled('about', $event)"
-  />
-
-  <div class="h-line-2"></div>
-
-  <app-skill-list
-    title="SKILLS"
-    icon="fa-gear"
-    [items]="skills"
-    (itemHovered)="onItemHovered($event)"
-  />
-
-  <div class="h-line-2"></div>
-
-  <app-language-list
-    [languages]="languages"
-  />
-
-  <div class="h-line-2"></div>
-
-  <app-skill-list
-    title="HOBBIES"
-    icon="fa-flag-checkered"
-    [items]="hobbies"
-    (itemHovered)="onItemHovered($event)"
-  />
-
-  <div class="h-line-2"></div>
-
+    <app-about-me [paragraphs]="aboutText" />
+    <div class="h-line-2"></div>
+    <app-skill-list title="SKILLS" icon="fa-gear" [items]="skills" />
+    <div class="h-line-2"></div>
+    <app-language-list [languages]="languages" />
+    <div class="h-line-2"></div>
+    <app-skill-list title="HOBBIES" icon="fa-flag-checkered" [items]="hobbies" />
+    <div class="h-line-2"></div>
 </div>

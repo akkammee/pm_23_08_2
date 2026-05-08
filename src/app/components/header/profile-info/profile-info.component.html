@@ -1,17 +1,26 @@
 <div class="profile-row">
-  <div class="profile-text">
-    <div class="text-1">{{ firstName }}</div>
-    <div class="text-2">{{ lastName }}</div>
-    <div class="text-3">{{ position }}</div>
-  </div>
+    <div class="profile-text">
+        @if (isEditing) {
+            <input class="text-1" [(ngModel)]="editFirstName" placeholder="Ім'я" />
+            <input class="text-2" [(ngModel)]="editLastName" placeholder="Прізвище" />
+            <div class="edit-actions">
+                <button class="btn btn--save" (click)="saveChanges()">Зберегти</button>
+                <button class="btn btn--cancel" (click)="cancelEdit()">Скасувати</button>
+            </div>
+        } @else {
+            <div class="text-1">{{ firstName }}</div>
+            <div class="text-2">{{ lastName }}</div>
+            <div class="text-3">{{ position }} <span class="edit-icon" (click)="startEdit()">✏️</span></div>
+        }
+    </div>
 
-  <div class="block-2">
-    @if (photoUrl) {
-      <img [src]="photoUrl" alt="Profile photo" class="img" />
-    } @else {
-      <div class="img img--placeholder">
-        <i class="fa-solid fa-user"></i>
-      </div>
-    }
-  </div>
+    <div class="block-2">
+        @if (photoUrl) {
+            <img [src]="photoUrl" alt="Profile photo" class="img" />
+        } @else {
+            <div class="img img--placeholder">
+                <i class="fa-solid fa-user"></i>
+            </div>
+        }
+    </div>
 </div>

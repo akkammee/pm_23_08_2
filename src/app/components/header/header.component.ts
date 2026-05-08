@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProfileInfoComponent } from './profile-info/profile-info.component';
 import { ContactBoxComponent } from './contact-box/contact-box.component';
 
@@ -10,17 +10,13 @@ import { ContactBoxComponent } from './contact-box/contact-box.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  firstName = 'NOEL';
-  lastName = 'TAYLOR';
-  position = 'GRAPHIC & WEB DESIGNER';
-  photoUrl = 'images.png';
-  phones = ['+1-718-310-5588', '+1-313-381-8167'];
-  website = 'www.yourwebsite.com';
-  email = 'yourinfo@email.com';
-  address = '769 Prudence Street';
-  city = 'Lincoln Park, MI 48146';
-
-  onContactClicked(type: string): void {
-    console.log('Contact clicked:', type);
-  }
+  @Input() firstName = '';
+  @Input() lastName = '';
+  @Input() position = '';
+  @Input() photoUrl = '';
+  @Input() phones: string[] = [];
+  @Input() website = '';
+  @Input() email = '';
+  @Input() address = '';
+  @Input() city = '';
 }

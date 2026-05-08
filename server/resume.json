@@ -1,0 +1,111 @@
+{
+  "header": {
+    "firstName": "NOEL",
+    "lastName": "TAYLOR",
+    "position": "GRAPHIC & WEB DESIGNER",
+    "photoUrl": "images.png",
+    "phones": [
+      "+1-718-310-5588",
+      "+1-313-381-8167"
+    ],
+    "website": "www.yourwebsite.com",
+    "email": "yourinfo@email.com",
+    "address": "769 Prudence Street",
+    "city": "Lincoln Park, MI 48146"
+  },
+  "sidebar": {
+    "aboutText": [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
+      "It has survived not only five centuries, but also the leap into electronic typesetting unchanged."
+    ],
+    "skills": [
+      {
+        "name": "Adobe Photoshop",
+        "value": 75
+      },
+      {
+        "name": "Adobe Illustrator",
+        "value": 70
+      },
+      {
+        "name": "Microsoft PowerPoint",
+        "value": 60
+      },
+      {
+        "name": "Microsoft Word",
+        "value": 65
+      },
+      {
+        "name": "HTML-5/CSS-3",
+        "value": 80
+      }
+    ],
+    "languages": [
+      "ENGLISH",
+      "SPANISH",
+      "FRENCH"
+    ],
+    "hobbies": [
+      {
+        "name": "Book Reading",
+        "value": 60
+      },
+      {
+        "name": "Traveling",
+        "value": 60
+      },
+      {
+        "name": "Playing Chess",
+        "value": 60
+      }
+    ]
+  },
+  "content": {
+    "education": [
+      {
+        "school": "STANFORD UNIVERSITY",
+        "degree": "MASTER DEGREE GRADUATE",
+        "years": "2011 - 2013"
+      },
+      {
+        "school": "UNIVERSITY OF CHICAGO",
+        "degree": "BACHELOR DEGREE GRADUATE",
+        "years": "2007 - 2010"
+      }
+    ],
+    "references": [
+      {
+        "name": "DARWIN .B MAGANA",
+        "address": "1964 Harley Brook Johnstown, PA 15904",
+        "tel": "+1-970-533-3393",
+        "email": "darwin@example.com"
+      },
+      {
+        "name": "ROBERT J. BELVIN",
+        "address": "1283 Little Acres Lane Champaign, IL 61820",
+        "tel": "+1-970-533-3393",
+        "email": "robert@example.com"
+      }
+    ],
+    "jobExperience": [
+      {
+        "title": "WEB DESIGNER",
+        "years": "2020 – Present",
+        "company": "Creative Agency / Chicago",
+        "description": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type."
+      },
+      {
+        "title": "GRAPHIC DESIGNER",
+        "years": "2015 – 2020",
+        "company": "Creative Market / Chicago",
+        "description": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type."
+      },
+      {
+        "title": "MARKETING MANAGER",
+        "years": "2013 – 2015",
+        "company": "Manufacturing Agency / NJ",
+        "description": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type."
+      }
+    ]
+  }
+}

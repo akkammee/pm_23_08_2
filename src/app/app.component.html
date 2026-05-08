@@ -1,17 +1,52 @@
 <div class="container">
-  <div class="row px-0">
 
-    <div class="col-12 px-0">
-      <app-header />
-    </div>
+    @if (errorMessage) {
+        <div class="error-banner">⚠️ {{ errorMessage }}</div>
+    }
 
-    <div class="col-5 px-0 left-bg">
-      <app-left-sidebar />
-    </div>
+    @if (successMessage) {
+        <div class="success-banner">✅ {{ successMessage }}</div>
+    }
 
-    <div class="col-7 px-0">
-      <app-right-content />
-    </div>
+    @if (isLoading) {
+        <div class="loading">Завантаження даних...</div>
+    }
 
-  </div>
+    @if (resume && !isLoading) {
+
+        <div class="row px-0">
+            <div class="col-12 px-0">
+                <app-header
+                        [firstName]="resume.header.firstName"
+                        [lastName]="resume.header.lastName"
+                        [position]="resume.header.position"
+                        [photoUrl]="resume.header.photoUrl"
+                        [phones]="resume.header.phones"
+                        [website]="resume.header.website"
+                        [email]="resume.header.email"
+                        [address]="resume.header.address"
+                        [city]="resume.header.city"
+                />
+            </div>
+        </div>
+
+        <div class="row px-0">
+            <div class="col-5 px-0 left-bg">
+                <app-left-sidebar
+                        [aboutText]="resume.sidebar.aboutText"
+                        [skills]="resume.sidebar.skills"
+                        [languages]="resume.sidebar.languages"
+                        [hobbies]="resume.sidebar.hobbies"
+                />
+            </div>
+            <div class="col-7 px-0">
+                <app-right-content
+                        [educationItems]="resume.content.education"
+                        [references]="resume.content.references"
+                        [jobItems]="resume.content.jobExperience"
+                />
+            </div>
+        </div>
+    }
+
 </div>
