@@ -1,0 +1,39 @@
+<div class="auth-page">
+    <div class="auth-card">
+        <h2 class="auth-title">Вхід</h2>
+
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="auth-field">
+                <label>Логін</label>
+                <input type="text" formControlName="username" placeholder="Введіть логін" />
+                @if (username.touched && username.hasError('required')) {
+                    <span class="auth-error">Логін обов'язковий</span>
+                }
+                @if (username.touched && username.hasError('minlength')) {
+                    <span class="auth-error">Мінімум 3 символи</span>
+                }
+            </div>
+
+            <div class="auth-field">
+                <label>Пароль</label>
+                <input type="password" formControlName="password" placeholder="Введіть пароль" />
+                @if (password.touched && password.hasError('required')) {
+                    <span class="auth-error">Пароль обов'язковий</span>
+                }
+                @if (password.touched && password.hasError('minlength')) {
+                    <span class="auth-error">Мінімум 6 символів</span>
+                }
+            </div>
+
+            @if (error) {
+                <div class="auth-server-error">{{ error }}</div>
+            }
+
+            <button type="submit" class="btn-primary">Увійти</button>
+        </form>
+
+        <p class="auth-toggle">
+            Немає акаунту? <a routerLink="/register">Реєстрація</a>
+        </p>
+    </div>
+</div>

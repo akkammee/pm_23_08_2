@@ -1,0 +1,70 @@
+$black: #333333;
+$shadow-dark: rgba(0, 0, 0, 0.25);
+$shadow-light: rgba(0, 0, 0, 0.12);
+$border-color: rgba(0, 0, 0, 0.05);
+
+.logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  padding: 10px 24px;
+  background: $black;
+  color: white;
+  border: 2px solid $black;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s, border-color 0.2s;
+
+  &:hover {
+    background: #555;
+    border-color: #555;
+  }
+}
+
+.container {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow:
+          0 30px 60px $shadow-dark,
+          0 10px 22px $shadow-light;
+  border: 1px solid $border-color;
+  max-width: 1400px;
+  width: 80%;
+  margin: 40px auto;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.col-5 {
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+
+.col-7 {
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%;
+}
+
+.px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.left-bg {
+  background-color: #eeeeee;
+}
