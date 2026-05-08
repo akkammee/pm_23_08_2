@@ -1,0 +1,21 @@
+<div class="about-me">
+
+  <div class="rw about-header" [class.active]="isOpen()" (click)="toggle()">
+    <div class="bg-icon-3">
+      <i class="fa-solid fa-user icon-3"></i>
+    </div>
+    <div class="text-5">ABOUT ME</div>
+    <i class="fa-solid fa-chevron-down arrow"></i>
+  </div>
+
+  <div class="about-content" [class.open]="isOpen()">
+    @if (paragraphs && paragraphs.length > 0) {
+      @for (paragraph of paragraphs; track paragraph) {
+        <div class="text-9">{{ paragraph }}</div>
+      }
+    } @else {
+      <div class="text-9">No description provided.</div>
+    }
+  </div>
+
+</div>

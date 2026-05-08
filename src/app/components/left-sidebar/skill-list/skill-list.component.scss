@@ -1,0 +1,93 @@
+$black: #333333;
+$gray: #eeeeee;
+$white: #ffffff;
+
+$pc: 1440px;
+$laptop: 1200px;
+$tablet: 768px;
+$phone: 480px;
+
+@mixin responsive($property, $pcSize, $laptopSize, $tabletSize, $phoneSize) {
+  #{$property}: $pcSize;
+  @media (min-width: $laptop) and (max-width: $pc)     { #{$property}: $laptopSize; }
+  @media (min-width: $tablet) and (max-width: $laptop) { #{$property}: $tabletSize; }
+  @media (min-width: $phone)  and (max-width: $tablet) { #{$property}: $phoneSize; }
+  @media (max-width: $phone)                           { #{$property}: $phoneSize; }
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include responsive(width,     350px, 300px, 260px, 220px);
+  @include responsive(font-size, 16px,  15px,  14px,  13px);
+  @include responsive(margin,    14px 0, 12px 0, 10px 0, 8px 0);
+  font-weight: 600;
+  color: $black;
+  cursor: default;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  @include responsive(width,  170px, 150px, 130px, 110px);
+  @include responsive(height, 9px,   9px,   8px,   8px);
+  background: $gray;
+  overflow: hidden;
+  border: 2px solid $black;
+  pointer-events: none;
+
+  &::-webkit-slider-runnable-track {
+    height: 6px;
+    background: $gray;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+    box-shadow: -200px 0 0 200px $black;
+  }
+}
+
+.empty {
+  color: $black;
+  font-style: italic;
+}
+
+.rw {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.bg-icon-3 {
+  background-color: $black;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $tablet) { height: 30px; width: 30px; }
+  @media (max-width: $phone)  { height: 26px; width: 26px; }
+}
+
+.icon-3 {
+  color: $white;
+  font-size: 20px;
+
+  @media (max-width: $tablet) { font-size: 18px; }
+  @media (max-width: $phone)  { font-size: 16px; }
+}
+
+.text-5 {
+  margin-top: -5px;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: $black;
+  font-weight: bold;
+
+  @media (max-width: $tablet) { font-size: 22px; }
+  @media (max-width: $phone)  { font-size: 20px; }
+}

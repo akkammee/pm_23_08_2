@@ -1,0 +1,25 @@
+<div class="job-experience">
+
+  <div class="rw">
+    <div class="bg-icon-3">
+      <i class="fa-solid fa-briefcase icon-3"></i>
+    </div>
+    <div class="text-5">JOB EXPERIENCE</div>
+  </div>
+
+  @if (items && items.length > 0) {
+    @for (job of items; track job.title) {
+      <div class="exp-item" (click)="onSelect(job.title)">
+        <div class="exp-header pd">
+          <div class="text-6">{{ job.title }}</div>
+          <span class="years">{{ job.years }}</span>
+        </div>
+        <div class="company"><em>{{ job.company }}</em></div>
+        <div class="desc">{{ job.description }}</div>
+      </div>
+    }
+  } @else {
+    <p class="empty">No experience data.</p>
+  }
+
+</div>

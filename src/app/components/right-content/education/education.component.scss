@@ -1,0 +1,88 @@
+$black: #333333;
+$white: #ffffff;
+
+$tablet: 768px;
+$phone: 480px;
+
+@mixin down($size) {
+  @media (max-width: $size) { @content; }
+}
+
+.edu-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edu-item {
+  flex: 0 0 50%;
+  max-width: 50%;
+
+  @include down($phone) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+.empty {
+  color: $black;
+  font-style: italic;
+}
+
+.rw {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.bg-icon-3 {
+  background-color: $black;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include down($tablet) { height: 30px; width: 30px; }
+  @include down($phone)  { height: 26px; width: 26px; }
+}
+
+.icon-3 {
+  color: $white;
+  font-size: 20px;
+  margin: 6px;
+
+  @include down($tablet) { font-size: 18px; }
+  @include down($phone)  { font-size: 16px; }
+}
+
+.text-5 {
+  margin-top: -5px;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: $black;
+  font-weight: bold;
+
+  @include down($tablet) { font-size: 22px; }
+  @include down($phone)  { font-size: 20px; }
+}
+
+.text-6 {
+  font-size: 18px;
+  color: $black;
+  font-weight: 700;
+  margin-left: 10px;
+
+  @include down($tablet) { font-size: 16px; }
+}
+
+.text-7,
+.text-8 {
+  font-size: 14px;
+  color: $black;
+  font-weight: 500;
+  margin-left: 10px;
+
+  @include down($tablet) { font-size: 13px; }
+}

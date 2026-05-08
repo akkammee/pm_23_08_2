@@ -1,0 +1,55 @@
+<div class="contact-box">
+
+  <div class="rw">
+    <div class="bg-icon-2">
+      <i class="fa-solid fa-user icon-2"></i>
+    </div>
+    <div class="text-4">CONTACT</div>
+  </div>
+
+  @if (phones && phones.length > 0) {
+    <div class="rw" (click)="onItemClick('phone')">
+      <div class="bg-icon">
+        <i class="fa-solid fa-phone icon"></i>
+      </div>
+      <div class="info">
+        @for (phone of phones; track phone) {
+          <p>{{ phone }}</p>
+        }
+      </div>
+    </div>
+  }
+
+  @if (website || email) {
+    <div class="rw" (click)="onItemClick('web')">
+      <div class="bg-icon">
+        <i class="fa-solid fa-globe icon"></i>
+      </div>
+      <div class="info">
+        @if (website) {
+          <p>{{ website }}</p>
+        }
+        @if (email) {
+          <p>{{ email }}</p>
+        }
+      </div>
+    </div>
+  }
+
+  @if (address || city) {
+    <div class="rw" (click)="onItemClick('address')">
+      <div class="bg-icon">
+        <i class="fa-solid fa-location-dot icon"></i>
+      </div>
+      <div class="info">
+        @if (address) {
+          <p>{{ address }}</p>
+        }
+        @if (city) {
+          <p>{{ city }}</p>
+        }
+      </div>
+    </div>
+  }
+
+</div>

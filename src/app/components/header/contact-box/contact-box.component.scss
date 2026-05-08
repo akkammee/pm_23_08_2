@@ -1,0 +1,91 @@
+$black: #333333;
+$white: #ffffff;
+
+$pc: 1440px;
+$laptop: 1200px;
+$tablet: 768px;
+$phone: 480px;
+
+@mixin responsive($property, $pcSize, $laptopSize, $tabletSize, $phoneSize) {
+  #{$property}: $pcSize;
+
+  @media (min-width: $laptop) and (max-width: $pc) {
+    #{$property}: $laptopSize;
+  }
+
+  @media (min-width: $tablet) and (max-width: $laptop) {
+    #{$property}: $tabletSize;
+  }
+
+  @media (min-width: $phone) and (max-width: $tablet) {
+    #{$property}: $phoneSize;
+  }
+
+  @media (max-width: $phone) {
+    #{$property}: $phoneSize;
+  }
+}
+
+.contact-box {
+  @include responsive(width, 300px, 280px, 260px, 220px);
+  @include responsive(height, 280px, 260px, 240px, 220px);
+  background: $black;
+  padding: 20px;
+  color: $white;
+  margin-left: auto;
+}
+
+.rw {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  i {
+    width: 24px;
+    text-align: center;
+  }
+}
+
+.info p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.icon {
+  color: $black;
+  @include responsive(font-size, 16px, 15px, 14px, 12px);
+}
+
+.bg-icon {
+  @include responsive(width, 25px, 23px, 20px, 18px);
+  @include responsive(height, 25px, 23px, 20px, 18px);
+  margin-top: 12px;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-icon-2 {
+  margin-top: 8px;
+  @include responsive(width, 35px, 32px, 28px, 24px);
+  @include responsive(height, 35px, 32px, 28px, 24px);
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-2 {
+  color: $black;
+  @include responsive(font-size, 25px, 23px, 20px, 18px);
+}
+
+.text-4 {
+  @include responsive(font-size, 30px, 26px, 22px, 18px);
+  text-transform: uppercase;
+  color: $white;
+  font-weight: bold;
+}

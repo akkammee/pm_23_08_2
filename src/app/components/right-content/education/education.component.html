@@ -1,0 +1,24 @@
+<div class="education">
+
+  <div class="rw">
+    <div class="bg-icon-3">
+      <i class="fa-solid fa-graduation-cap icon-3"></i>
+    </div>
+    <div class="text-5">EDUCATION</div>
+  </div>
+
+  <div class="edu-grid">
+    @if (items && items.length > 0) {
+      @for (item of items; track item.school) {
+        <div class="edu-item">
+          <div class="text-6">{{ item.school }}</div>
+          <div class="text-7">{{ item.degree }}</div>
+          <div class="text-8">{{ item.years }}</div>
+        </div>
+      }
+    } @else {
+      <p class="empty">No education data.</p>
+    }
+  </div>
+
+</div>

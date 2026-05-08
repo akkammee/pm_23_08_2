@@ -1,0 +1,92 @@
+$black: #333333;
+$white: #ffffff;
+
+$tablet: 768px;
+$phone: 480px;
+
+.about-me {
+  width: 100%;
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding-right: 15px;
+  margin-bottom: 0;
+
+  .arrow {
+    margin-left: auto;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+
+  &.active .arrow {
+    transform: rotate(-90deg);
+  }
+}
+
+.about-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+
+  &.open {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+.text-9 {
+  font-size: 19px;
+  line-height: 28px;
+  margin-bottom: 20px;
+  color: $black;
+  font-weight: 350;
+  text-align: justify;
+  display: block;
+  width: 100%;
+
+  @media (max-width: $tablet) { font-size: 15px; line-height: 24px; margin-bottom: 15px; }
+  @media (max-width: $phone)  { font-size: 14px; line-height: 22px; margin-bottom: 12px; }
+}
+
+.rw {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.bg-icon-3 {
+  background-color: $black;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $tablet) { height: 30px; width: 30px; }
+  @media (max-width: $phone)  { height: 26px; width: 26px; }
+}
+
+.icon-3 {
+  color: $white;
+  font-size: 20px;
+
+  @media (max-width: $tablet) { font-size: 18px; }
+  @media (max-width: $phone)  { font-size: 16px; }
+}
+
+.text-5 {
+  margin-top: -5px;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: $black;
+  font-weight: bold;
+
+  @media (max-width: $tablet) { font-size: 22px; }
+  @media (max-width: $phone)  { font-size: 20px; }
+}

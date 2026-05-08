@@ -1,0 +1,36 @@
+$pc: 1440px;
+$laptop: 1200px;
+$tablet: 768px;
+$phone: 480px;
+
+@mixin responsive($property, $pcSize, $laptopSize, $tabletSize, $phoneSize) {
+  #{$property}: $pcSize;
+
+  @media (min-width: $laptop) and (max-width: $pc) {
+    #{$property}: $laptopSize;
+  }
+
+  @media (min-width: $tablet) and (max-width: $laptop) {
+    #{$property}: $tabletSize;
+  }
+
+  @media (min-width: $phone) and (max-width: $tablet) {
+    #{$property}: $phoneSize;
+  }
+
+  @media (max-width: $phone) {
+    #{$property}: $phoneSize;
+  }
+}
+
+.head-pd {
+  display: flex;
+  @include responsive(padding-top, 50px, 40px, 30px, 20px);
+  @include responsive(padding-bottom, 50px, 40px, 30px, 20px);
+}
+
+.block-1 {
+  @include responsive(width, 80px, 70px, 60px, 45px);
+  @include responsive(height, 280px, 260px, 240px, 200px);
+  background-color: #333333;
+}

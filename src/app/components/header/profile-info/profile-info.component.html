@@ -1,0 +1,17 @@
+<div class="profile-row">
+  <div class="profile-text">
+    <div class="text-1">{{ firstName }}</div>
+    <div class="text-2">{{ lastName }}</div>
+    <div class="text-3">{{ position }}</div>
+  </div>
+
+  <div class="block-2">
+    @if (photoUrl) {
+      <img [src]="photoUrl" alt="Profile photo" class="img" />
+    } @else {
+      <div class="img img--placeholder">
+        <i class="fa-solid fa-user"></i>
+      </div>
+    }
+  </div>
+</div>

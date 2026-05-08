@@ -1,0 +1,21 @@
+<div class="section">
+
+  <div class="rw">
+    <div class="bg-icon-3">
+      <i class="fa-solid {{ icon }} icon-3"></i>
+    </div>
+    <div class="text-5">{{ title }}</div>
+  </div>
+
+  @if (items && items.length > 0) {
+    @for (item of items; track item.name) {
+      <div class="skill" (mouseenter)="onHover(item.name)">
+        <span>{{ item.name }}</span>
+        <input type="range" [value]="item.value" max="100" readonly />
+      </div>
+    }
+  } @else {
+    <p class="empty">No items provided.</p>
+  }
+
+</div>

@@ -1,0 +1,20 @@
+<div class="head-pd">
+  <div class="block-1"></div>
+
+  <app-profile-info
+    [firstName]="firstName"
+    [lastName]="lastName"
+    [position]="position"
+    [photoUrl]="photoUrl"
+  />
+
+  <app-contact-box
+    [phones]="phones"
+    [website]="website"
+    [email]="email"
+    [address]="address"
+    [city]="city"
+    (contactClicked)="onContactClicked($event)"
+  />
+
+</div>

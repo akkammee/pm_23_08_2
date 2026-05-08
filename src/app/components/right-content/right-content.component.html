@@ -1,0 +1,23 @@
+<div class="right-pd">
+
+  <app-education
+    [items]="educationItems"
+  />
+
+  <div class="h-line"></div>
+
+  <app-references
+    [items]="references"
+    (referenceClicked)="onReferenceClicked($event)"
+  />
+
+  <div class="h-line"></div>
+
+  <app-job-experience
+    [items]="jobItems"
+    (jobSelected)="onJobSelected($event)"
+  />
+
+  <div class="h-line"></div>
+
+</div>

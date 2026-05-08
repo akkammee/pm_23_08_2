@@ -1,0 +1,28 @@
+$black: #333333;
+
+$pc: 1440px;
+$laptop: 1200px;
+$tablet: 768px;
+$phone: 480px;
+
+@mixin responsive($property, $pcSize, $laptopSize, $tabletSize, $phoneSize) {
+  #{$property}: $pcSize;
+  @media (min-width: $laptop) and (max-width: $pc)    { #{$property}: $laptopSize; }
+  @media (min-width: $tablet) and (max-width: $laptop) { #{$property}: $tabletSize; }
+  @media (min-width: $phone)  and (max-width: $tablet) { #{$property}: $phoneSize; }
+  @media (max-width: $phone)                           { #{$property}: $phoneSize; }
+}
+
+.pd-3 {
+  @include responsive(margin-top,   45px, 40px, 30px, 20px);
+  @include responsive(margin-left,  60px, 40px, 25px, 15px);
+  @include responsive(margin-right, 50px, 35px, 20px, 10px);
+}
+
+.h-line-2 {
+  height: 1.5px;
+  width: 100%;
+  background: $black;
+  @include responsive(margin-top,    20px, 18px, 15px, 12px);
+  @include responsive(margin-bottom, 20px, 18px, 15px, 12px);
+}

@@ -1,0 +1,29 @@
+$black: #333333;
+
+$laptop: 1200px;
+$tablet: 768px;
+$phone: 480px;
+
+@mixin down($size) {
+  @media (max-width: $size) { @content; }
+}
+
+.right-pd {
+  padding-left: 50px;
+  padding-right: 60px;
+
+  @include down($laptop) { padding-left: 30px; padding-right: 40px; }
+  @include down($tablet) { padding-left: 20px; padding-right: 25px; }
+  @include down($phone)  { padding-left: 10px; padding-right: 15px; }
+}
+
+.h-line {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  height: 1.5px;
+  width: 100%;
+  background-color: $black;
+
+  @include down($tablet) { margin-top: 30px; margin-bottom: 30px; }
+  @include down($phone)  { margin-top: 20px; margin-bottom: 20px; }
+}

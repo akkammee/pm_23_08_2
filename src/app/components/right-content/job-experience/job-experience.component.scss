@@ -1,0 +1,101 @@
+$black: #333333;
+$white: #ffffff;
+
+$tablet: 768px;
+$phone: 480px;
+
+@mixin down($size) {
+  @media (max-width: $size) { @content; }
+}
+
+.exp-item {
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  @include down($phone) { margin-bottom: 14px; }
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+
+  @include down($tablet) { flex-direction: column; gap: 5px; }
+}
+
+.pd {
+  margin-left: -10px;
+  @include down($phone) { margin-left: 0; }
+}
+
+.years {
+  font-weight: 500;
+}
+
+.company {
+  margin-bottom: 10px;
+  @include down($phone) { margin-bottom: 5px; }
+}
+
+.desc {
+  font-size: 16px;
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  word-spacing: 1px;
+
+  @include down($tablet) { font-size: 15px; }
+  @include down($phone)  { font-size: 14px; }
+}
+
+.empty {
+  color: $black;
+  font-style: italic;
+}
+
+.rw {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.bg-icon-3 {
+  background-color: $black;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include down($tablet) { height: 30px; width: 30px; }
+  @include down($phone)  { height: 26px; width: 26px; }
+}
+
+.icon-3 {
+  color: $white;
+  font-size: 20px;
+  margin: 6px;
+
+  @include down($tablet) { font-size: 18px; }
+  @include down($phone)  { font-size: 16px; }
+}
+
+.text-5 {
+  margin-top: -5px;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: $black;
+  font-weight: bold;
+
+  @include down($tablet) { font-size: 22px; }
+  @include down($phone)  { font-size: 20px; }
+}
+
+.text-6 {
+  font-size: 18px;
+  color: $black;
+  font-weight: 700;
+  margin-left: 10px;
+
+  @include down($tablet) { font-size: 16px; }
+}

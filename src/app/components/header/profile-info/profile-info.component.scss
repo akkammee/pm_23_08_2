@@ -1,0 +1,77 @@
+$black: #333333;
+
+$pc: 1440px;
+$laptop: 1200px;
+$tablet: 768px;
+$phone: 480px;
+
+@mixin responsive($property, $pcSize, $laptopSize, $tabletSize, $phoneSize) {
+  #{$property}: $pcSize;
+  @media (min-width: $laptop) and (max-width: $pc) { #{$property}: $laptopSize; }
+  @media (min-width: $tablet) and (max-width: $laptop) { #{$property}: $tabletSize; }
+  @media (min-width: $phone) and (max-width: $tablet) { #{$property}: $phoneSize; }
+  @media (max-width: $phone) { #{$property}: $phoneSize; }
+}
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.profile-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile-text {
+  flex: 1;
+}
+
+%text-base {
+  margin-left: 30px;
+  text-transform: uppercase;
+  color: $black;
+  font-weight: bold;
+}
+
+.text-1 {
+  @extend %text-base;
+  @include responsive(font-size, 90px, 70px, 55px, 40px);
+}
+
+.text-2 {
+  @extend %text-base;
+  @include responsive(font-size, 90px, 70px, 55px, 40px);
+  @include responsive(margin-top, -45px, -35px, -25px, -15px);
+}
+
+.text-3 {
+  @extend %text-base;
+  margin-top: -20px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  @include responsive(font-size, 25px, 22px, 18px, 16px);
+}
+
+.block-2 {
+  @include responsive(margin-left, 25px, 20px, 15px, 10px);
+}
+
+.img {
+  @include responsive(width, 280px, 250px, 220px, 180px);
+  @include responsive(height, 280px, 250px, 220px, 180px);
+  border: 10px solid $black;
+  object-fit: cover;
+
+  &--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+
+    i {
+      font-size: 60px;
+      color: $black;
+    }
+  }
+}
